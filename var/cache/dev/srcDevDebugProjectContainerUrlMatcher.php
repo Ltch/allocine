@@ -65,12 +65,16 @@ class srcDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             default:
                 $routes = array(
                     '/default' => array(array('_route' => 'default', '_controller' => 'App\\Controller\\DefaultController::index'), null, null, null),
+                    '/users' => array(array('_route' => 'users', '_controller' => 'App\\Controller\\UsersController::login'), null, null, null),
                     '/_profiler/' => array(array('_route' => '_profiler_home', '_controller' => 'web_profiler.controller.profiler::homeAction'), null, null, null),
                     '/_profiler/search' => array(array('_route' => '_profiler_search', '_controller' => 'web_profiler.controller.profiler::searchAction'), null, null, null),
                     '/_profiler/search_bar' => array(array('_route' => '_profiler_search_bar', '_controller' => 'web_profiler.controller.profiler::searchBarAction'), null, null, null),
                     '/_profiler/phpinfo' => array(array('_route' => '_profiler_phpinfo', '_controller' => 'web_profiler.controller.profiler::phpinfoAction'), null, null, null),
                     '/_profiler/open' => array(array('_route' => '_profiler_open_file', '_controller' => 'web_profiler.controller.profiler::openAction'), null, null, null),
                     '/' => array(array('_route' => 'index', '_controller' => 'App\\Controller\\DefaultController::index'), null, null, null),
+                    '/login' => array(array('_route' => 'login', '_controller' => 'App\\Controller\\UsersController::login'), null, null, null),
+                    '/sign_in' => array(array('_route' => 'sign_in', '_controller' => 'App\\Controller\\UsersController::sign'), null, null, null),
+                    '/logout' => array(array('_route' => 'log_out', '_controller' => 'App\\Controller\\UsersController::log_out'), null, null, null),
                 );
 
                 if (!isset($routes[$pathinfo])) {

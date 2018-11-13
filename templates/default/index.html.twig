@@ -1,10 +1,22 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello !{% endblock %}
+{% block title %}Home !{% endblock %}
 {% block stylesheet %}{% endblock %}
 
 {% block body %}
 <div class="example-wrapper">
-    <h1>Hello ! ✅</h1>
+    <h1>Home page ! Yeah</h1>
 </div>
+<nav>
+  <ul>
+    <li><a href="/login">login</a></li>
+    <li><a href="/sign_in">sign in</a></li>
+    {% if session is defined %}
+      <li><a href="/logout">Log out</li>
+    {% endif %}
+  </ul>
+</nav>
+{% if name is defined %}
+  <p>{{ name }}</p>
+{% endif %}
 {% endblock %}
